@@ -1,13 +1,13 @@
                                      GRADER
 
-Name of student running submit:
-Login of student running submit:
+Name of student running submit:xingguo cao
+Login of student running submit:61b-ahd
 
-Second team member's name:
-Second team member's login:
+Second team member's name:junhui zhang
+Second team member's login:61b-avs
 
-Third team member's name (if any):
-Third team member's login:
+Third team member's name (if any): Hao Huang
+Third team member's login: cs61b-aes
 
 IMPORTANT:  Once you've submitted Project 2 once, the same team member should
 submit always.  If a different teammate must submit, inform cs61b@cory.eecs of
@@ -19,36 +19,39 @@ code together, you may not change partners without the permission of the
 instructor.
 ===============================================================================
 Does your program compile without errors?
+--No errors.
 
 
 Have you tested your program on the 61B lab machines?
+--Yes.
 
 
 Did you successfully implement game tree search?  Did you successfully
 implement alpha-beta pruning?  Are there any limitations on it?  What is the
 default number of search levels set by the one-parameter MachinePlayer
 constructor (or is it a variable-depth search)?
+--Yes,Yes,4-depth.
 
 
 Describe your board evaluation function in some detail.
+--by hint in project readme, calculated number of connections for my chip subtract opponents’ number of connections.
 
 
 Does your MachinePlayer use any special method of choosing the first few moves?
-
-
+--no
 Is there anything else the graders should know to help them read your project?
-
+no
 
 
 Describe the classes, modules, and interfaces you designed before and while you
 implemented the project.  Your description should include:
-  -  A list of the classes your program uses.
+  -  A list of the classes your program uses. (checked)
   -  A list of each of the "modules" used in or by MachinePlayer, similar to
      the list in the "Teamwork" section of the README (but hopefully more
      detailed).  (If you're using a list class, that should probably count as
-     a separate module.)
-  -  For each module, list the class(es) the module is implemented in.
-  -  For each module, say which of your team members implemented it.
+     a separate module.) (checked)
+  -  For each module, list the class(es) the module is implemented in.(checked)
+  -  For each module, say which of your team members implemented it.(checked)
   -  For each module, describe its interface--specifically, the prototype and
      behavior of each method that is available for external callers (outside
      the module) to call.  Don't include methods that are only meant to be
@@ -62,3 +65,93 @@ You will probably need to change some of your design decisions as you go; be
 sure to modify this file to reflect these changes before you submit your
 project.  Your design of classes and interfaces will be worth 10% of your
 grade.
+
+ -  A list of the classes our program uses:
+1.Best class 
+2.Board class 
+3. Cell class 
+4. MachinePlayer class
+5.Move class 
+6.MyArrayList class 
+7.MyEntry class 
+8.MyStack class
+9.MyTable class 
+10.Play class 
+11. StackNode class
+
+-  A list of each of the "modules" used in or by MachinePlayer && team members distribution:
+  Junhui Zhang - 1)  determining whether a move is valid or not.
+  Junhui Zhang - 2)  generating a list of all valid moves for the given board.
+  Xingguo Cao  - 3)  finding the chips (of the same color) that form connections with a chip.
+  Xingguo Cao  - 4)  determining whether a game board contains any networks for a given color.
+  Hao Huang    - 5)  computing an evaluation function for a board
+  Hao Huang    - 6)  performing minimax tree search
+
+- A list the class(es) the module is implemented in:
+-- module 1: Board class
+-- module 2: Board class
+-- module 3: Board class
+-- module 4: Board class
+-- module 5: MachinePlayer class
+-- module 6: MachinePlayer class
+
+
+Junhui Zhang - 1)  determining whether a move is valid or not.
+module implemented in Board class,
+/*	
+	isValidMove takes in a move and color
+returns true if the move is valid, false o/w
+*/
+	public boolean isValidMove(Move move, int color){}
+
+
+Junhui Zhang - 2)  generating a list of all valid moves for the given board.
+module implemented in Board class,
+/*
+	allValidMoves takes in color
+returns an array of all valid moves for current board
+*/
+  
+	public Move[] allValidMoves(int color){}
+
+
+Xingguo Cao  - 3)  finding the chips (of the same color) that form connections with a chip.
+module implemented in Board class,
+/*
+	connectedCells takes in a Cell object
+return a Cell array represents all connected cells to the chip
+*/
+	public Cell[] connectedCells(Cell chip)
+
+
+Xingguo Cao  - 4)  determining whether a game board contains any networks for a given
+module implemented in Board class, use self-defined data structure: MyArrayList class, MyEntry class, MyStack class
+,MyTable class,StackNode class
+/*	hasNetwork takes in color
+	return true if a board has network for the given color, false otherwise
+ */
+
+public boolean hasNetwork(int color)
+
+
+Hao Huang    - 5)  computing an evaluation function for a board
+module implemented in Board class
+
+/*	evaluation takes in color
+      	called by module 6) bestMove
+	returns the score to assign to the color in current board
+*/
+	public int evaluation(int color) {}
+ 
+
+Hao Huang module 6)  performing minimax tree search
+module implemented in MachinePlayer class
+
+/*	bestMove takes in color, initial alpha beta value, and depth of search
+	called by chooseMove in MachinePlayer class
+	returns the best move for "color", using alpha beta pruning
+*/
+  private Best bestMove(int color, int alpha, int beta, int depth) {}
+
+
+

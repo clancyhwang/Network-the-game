@@ -1,12 +1,12 @@
 /* Player.java */
 
-package player;
-
 /**
  *  A class that is extended by all Network players (human and machine).
  *
  *  DO NOT CHANGE THIS FILE.
  */
+package player;
+
 public abstract class Player {
   // This player's name as recognized by the game Network.
   public String myName;

@@ -1,7 +1,5 @@
 /* Move.java  */
 
-package player;
-
 /**
  *  A public class for holding all the fields in a move.  This class is a
  *  container for data, not an ADT; hence, all fields are public.
@@ -12,6 +10,8 @@ package player;
  *
  *  DO NOT CHANGE THIS FILE.
  */
+package player;
+
 public class Move {
 
   public final static int QUIT = 0;
